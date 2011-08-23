@@ -28,7 +28,9 @@
 
 (vendor 'color-theme)
 (vendor 'textmate)
-
+(vendor 'magit)
+(vendor 'nyan-mode)
+(vendor 'yasnippet)
 
 (mapcar 'load-directory '("~/.emacs.d/customisations"))
 
