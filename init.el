@@ -27,6 +27,7 @@
 (mapcar 'load-directory '("~/.emacs.d/utilities"))
 
 (vendor 'color-theme)
+(vendor 'textmate)
 
 
 (mapcar 'load-directory '("~/.emacs.d/customisations"))
