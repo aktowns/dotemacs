@@ -26,7 +26,26 @@
 (load "~/.emacs.d/load-directory.el")
 (mapcar 'load-directory '("~/.emacs.d/utilities"))
 
+(vendor 'color-theme)
+
+
 (mapcar 'load-directory '("~/.emacs.d/customisations"))
 
 (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
 				     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fringe-mode 0 nil (fringe)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
