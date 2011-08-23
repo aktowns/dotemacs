@@ -1,4 +1,5 @@
 ;; init.el - my convuluted emacs config <ashleyis@me.com>
+;; layout stolen from: https://github.com/stevej/emacs
 
 ; add /usr/local/bin to exec-path (brew etc)
 (push "/usr/local/bin" exec-path)
@@ -12,5 +13,5 @@
 
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/customisations")
-(add-to-list 'load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/utils")
+
