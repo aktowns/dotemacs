@@ -1,5 +1,7 @@
 ;; GUI specific
 (when (window-system)
+  ; make the window a little bigger
+  (set-frame-width (selected-frame) 95)
   ; hide toolbar and scrollbars
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
@@ -19,6 +21,13 @@
 (global-linum-mode 1)
 (setq linum-format "%3d ")
 
+(setq-default tab-width 4)
 
+; give coffee script only 2 space tabs
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2))
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
 
 
