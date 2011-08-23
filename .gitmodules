@@ -19,3 +19,9 @@
 [submodule "vendor/slime"]
 	path = vendor/slime
 	url = git://sbcl.boinkor.net/slime.git
+[submodule "vendor/markdown-mode"]
+	path = vendor/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
+[submodule "vendor/nxhtml"]
+	path = vendor/nxhtml
+	url = https://github.com/emacsmirror/nxhtml.git

@@ -11,4 +11,10 @@
 ; window switching
 (global-set-key (kbd "s-`") 'other-window)
 
-				   
+; magit
+(global-set-key (kbd "C-c i") 'magit-status)
+
+;; s-left , s-right line begin / line end
+(global-set-key (kbd "<s-left>") 'beginning-of-line)
+(global-set-key (kbd "<s-right>") 'end-of-line)
+

@@ -1,8 +1,8 @@
 ; pretty git is pretty
 (require 'magit)
 
-; :(
-(nyan-mode)
+(when (window-system) ;; console no have xpm!
+  (nyan-mode))
 
 ; tab complete snipepts
 (require 'yasnippet)
@@ -10,15 +10,9 @@
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 
 ; coffescript!
-(require 'coffee-mode)
+(autoload 'coffee-mode "coffee-mode.el" "Editing teh coffee scripts" t)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
-;; Put backup files (ie foo~) in one place too. (The backup-directory-alist
-;; list contains regexp=>directory mappings; filenames matching a regexp are
-;; backed up in the corresponding directory. Emacs will mkdir it if necessary.)
-(defvar backup-dir (concat "/tmp/emacs_backups/" (user-login-name) "/"))
-(setq backup-directory-alist (list (cons "." backup-dir)))
 
 ; ido ido!
 (require 'ido)
@@ -50,13 +44,30 @@
 
 (require 'android-mode)
 
-(require 'clojure-mode)
+(autoload 'clojure-mode "clojure-mode.el" "Clojure mode" t)
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 ;(add-hook 'clojure-mode-hook (lambda () (paredit-mode nil)))
 
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))
 (require 'slime)
+(slime-setup)
+
 
 ; i <3 cmd+t
 (require 'textmate)
 (textmate-mode t)
+
+(autoload 'markdown-mode "markdown-mode.el" 
+  "Major mode for editing Markdown files" t) 
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
+(setq auto-mode-alist (cons '("\\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-hook 'lua-mode-hook 'turn-on-font-lock)
+
 

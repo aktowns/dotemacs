@@ -14,6 +14,9 @@
 ; force new frames into existing window
 (setq ns-pop-up-frames nil)
 
+; inserts over highlighted regions when you press a key rather than writing at the point.
+(delete-selection-mode 1)
+
 ; disable splash screen and startup message
 (setq inhibit-startup-message t)
 
