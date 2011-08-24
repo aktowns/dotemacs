@@ -25,3 +25,6 @@
 [submodule "vendor/pivotal-tracker"]
 	path = vendor/pivotal-tracker
 	url = https://github.com/jxa/pivotal-tracker.git
+[submodule "vendor/yasnippet/snippets/js-mode"]
+	path = vendor/yasnippet/snippets/js-mode
+	url = https://github.com/azer/js-yasnippets.git
