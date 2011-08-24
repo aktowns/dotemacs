@@ -4,17 +4,17 @@
 (when (window-system)
   (server-start)) ;; yep.
 
-; add /usr/local/bin to exec-path (brew etc)
+;; add /usr/local/bin to exec-path (brew etc)
 (push "/usr/local/bin" exec-path)
 
-; quick edit init
+;; quick edit init
 (defun ein () 
   (find-file "~/.emacs.d/init.el"))
 
-; setup ELPA repos
+;; setup ELPA repos
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
-			 ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+						 ("gnu" . "http://elpa.gnu.org/packages/")
+						 ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (require 'cl)
 
@@ -42,6 +42,7 @@
 ;(vendor 'nxhtml)
 (vendor 'php-mode)
 (vendor 'lua-mode)
+(vendor 'pivotal-tracker)
 (when (window-system)
   (vendor 'nyan-mode)) ; no nyan-mode in console
 
@@ -49,9 +50,10 @@
 (mapcar 'load-directory '("~/.emacs.d/customisations"))
 
 (message "My .emacs loaded in %ds" 
-	 (destructuring-bind (hi lo ms) (current-time)
-	   (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+		 (destructuring-bind (hi lo ms) (current-time)
+		   (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
 
+(load "~/.emacs.d/private.el") ; things i don't want on github, pivotal api key etc
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

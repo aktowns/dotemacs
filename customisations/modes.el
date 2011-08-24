@@ -1,20 +1,20 @@
-; pretty git is pretty
+;; pretty git is pretty
 (require 'magit)
 
-(when (window-system) ;; console no have xpm!
+(when (window-system) ; console no have xpm!
   (nyan-mode))
 
-; tab complete snipepts
+;; tab complete snipepts
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 
-; coffescript!
+;; coffescript!
 (autoload 'coffee-mode "coffee-mode.el" "Editing teh coffee scripts" t)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
-; ido ido!
+;; ido ido!
 (require 'ido)
 (ido-mode t)
 ;;(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
@@ -34,7 +34,7 @@
 ;(global-smart-tab-mode 1)
 ;(setq smart-tab-using-hippie-expand nil)
 
-; aaack
+;; aaack
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 (autoload 'ack-find-same-file "full-ack" nil t)
@@ -54,7 +54,7 @@
 (slime-setup)
 
 
-; i <3 cmd+t
+;; i <3 cmd+t
 (require 'textmate)
 (textmate-mode t)
 
